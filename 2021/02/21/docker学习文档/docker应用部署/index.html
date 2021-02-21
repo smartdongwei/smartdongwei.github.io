@@ -175,7 +175,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-21 21:31" pubdate>
+      <time datetime="2021-02-21 21:50" pubdate>
         2021年2月21日 晚上
       </time>
     </span>
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      14 字
+      713 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      10
        分钟
     </span>
   
@@ -230,7 +230,114 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>##1: 深度优先搜索和广度优先搜索</p>
+              <h2 id="Docker-应用部署"><a href="#Docker-应用部署" class="headerlink" title="Docker 应用部署"></a>Docker 应用部署</h2><h3 id="一、部署MySQL"><a href="#一、部署MySQL" class="headerlink" title="一、部署MySQL"></a>一、部署MySQL</h3><ol>
+<li>搜索mysql镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker search mysql<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>拉取mysql镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull mysql:5.6<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建容器，设置端口映射、目录映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 在/root目录下创建mysql目录用于存储mysql数据信息</span><br>mkdir ~/mysql<br>cd ~/mysql<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -id \<br>-p 3307:3306 \<br>--name=c_mysql \<br>-v $PWD/conf:/etc/mysql/conf.d \<br>-v $PWD/logs:/logs \<br>-v $PWD/data:/var/lib/mysql \<br>-e MYSQL_ROOT_PASSWORD=123456 \<br>mysql:5.6<br></code></pre></td></tr></table></figure>
+<ul>
+<li>参数说明：<ul>
+<li><strong>-p 3307:3306</strong>：将容器的 3306 端口映射到宿主机的 3307 端口。</li>
+<li><strong>-v $PWD/conf:/etc/mysql/conf.d</strong>：将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。配置目录</li>
+<li><strong>-v $PWD/logs:/logs</strong>：将主机当前目录下的 logs 目录挂载到容器的 /logs。日志目录</li>
+<li><strong>-v $PWD/data:/var/lib/mysql</strong> ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。数据目录</li>
+<li><strong>-e MYSQL_ROOT_PASSWORD=123456：</strong>初始化 root 用户的密码。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>进入容器，操作mysql</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker exec –it c_mysql /bin/bash<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>使用外部机器连接容器中的mysql</li>
+</ol>
+<p><img src=".%5Cimgs%5C1573636765632.png" srcset="/img/loading.gif" alt="1573636765632"></p>
+<h3 id="二、部署Tomcat"><a href="#二、部署Tomcat" class="headerlink" title="二、部署Tomcat"></a>二、部署Tomcat</h3><ol>
+<li>搜索tomcat镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker search tomcat<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>拉取tomcat镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull tomcat<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建容器，设置端口映射、目录映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 在/root目录下创建tomcat目录用于存储tomcat数据信息</span><br>mkdir ~/tomcat<br>cd ~/tomcat<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -id --name=c_tomcat \<br>-p 8080:8080 \<br>-v $PWD:/usr/local/tomcat/webapps \<br>tomcat <br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>参数说明：</p>
+<ul>
+<li><p><strong>-p 8080:8080：</strong>将容器的8080端口映射到主机的8080端口</p>
+<p><strong>-v $PWD:/usr/local/tomcat/webapps：</strong>将主机中当前目录挂载到容器的webapps</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>使用外部机器访问tomcat</li>
+</ol>
+<p><img src="./imgs%5C1573649804623.png" srcset="/img/loading.gif" alt="1573649804623"></p>
+<h3 id="三、部署Nginx"><a href="#三、部署Nginx" class="headerlink" title="三、部署Nginx"></a>三、部署Nginx</h3><ol>
+<li>搜索nginx镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker search nginx<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>拉取nginx镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull nginx<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建容器，设置端口映射、目录映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 在/root目录下创建nginx目录用于存储nginx数据信息</span><br>mkdir ~/nginx<br>cd ~/nginx<br>mkdir conf<br>cd conf<br><span class="hljs-meta">#</span><span class="bash"> 在~/nginx/conf/下创建nginx.conf文件,粘贴下面内容</span><br>vim nginx.conf<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs shell"><br>user  nginx;<br>worker_processes  1;<br><br>error_log  /var/log/nginx/error.log warn;<br>pid        /var/run/nginx.pid;<br><br><br>events &#123;<br>    worker_connections  1024;<br>&#125;<br><br><br>http &#123;<br>    include       /etc/nginx/mime.types;<br>    default_type  application/octet-stream;<br><br>    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;<br>                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;<br>                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;<br><br>    access_log  /var/log/nginx/access.log  main;<br><br>    sendfile        on;<br>    #tcp_nopush     on;<br><br>    keepalive_timeout  65;<br><br>    #gzip  on;<br><br>    include /etc/nginx/conf.d/*.conf;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -id --name=c_nginx \<br>-p 80:80 \<br>-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf \<br>-v $PWD/logs:/var/log/nginx \<br>-v $PWD/html:/usr/share/nginx/html \<br>nginx<br></code></pre></td></tr></table></figure>
+<ul>
+<li>参数说明：<ul>
+<li><strong>-p 80:80</strong>：将容器的 80端口映射到宿主机的 80 端口。</li>
+<li><strong>-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf</strong>：将主机当前目录下的 /conf/nginx.conf 挂载到容器的 :/etc/nginx/nginx.conf。配置目录</li>
+<li><strong>-v $PWD/logs:/var/log/nginx</strong>：将主机当前目录下的 logs 目录挂载到容器的/var/log/nginx。日志目录</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>使用外部机器访问nginx</li>
+</ol>
+<p><img src=".%5Cimgs%5C1573652396669.png" srcset="/img/loading.gif" alt="1573652396669"></p>
+<h3 id="四、部署Redis"><a href="#四、部署Redis" class="headerlink" title="四、部署Redis"></a>四、部署Redis</h3><ol>
+<li>搜索redis镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker search redis<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>拉取redis镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull redis:5.0<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建容器，设置端口映射</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -id --name=c_redis -p 6379:6379 redis:5.0<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>使用外部机器连接redis</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./redis-cli.exe -h 192.168.149.135 -p 6379<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
 
             </div>
             <hr>
@@ -251,7 +358,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">
+                      <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%AE%89%E8%A3%85docker/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
@@ -261,7 +368,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Spring%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(%E4%B8%80)/">
+                      <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/dockerfile/">
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

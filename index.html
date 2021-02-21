@@ -184,6 +184,214 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%AE%89%E8%A3%85docker/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%AE%89%E8%A3%85docker/">
+          
+          
+            
+          
+          一、课程方式安装Docker12345678910# 1、yum 包更新到最新 yum update# 2、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的 yum install -y yum-utils device-mapper-persistent-data lvm2# 3、 设置yum源yum-config-
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 21:50" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">
+          
+          
+            
+          
+          Docker 应用部署一、部署MySQL
+搜索mysql镜像
+
+1docker search mysql
+
+拉取mysql镜像
+
+1docker pull mysql:5.6
+
+创建容器，设置端口映射、目录映射
+
+123# 在/root目录下创建mysql目录用于存储mysql数据信息mkdir ~/mysqlcd ~/mysql
+12345678docker run -id \-p 3307:3
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 21:50" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/dockerfile/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/dockerfile/">
+          
+          
+            
+          
+          Dockerfile
+
+
+关键字
+作用
+备注
+
+
+
+FROM
+指定父镜像
+指定dockerfile基于那个image构建
+
+
+MAINTAINER
+作者信息
+用来标明这个dockerfile谁写的
+
+
+LABEL
+标签
+用来标明dockerfile的标签 可以使用Label代替Maintainer 最终都是在docker image基本信息中可以查看
+
+
+RUN
+执行命令
+执行一段命令 默认是/b
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 21:50" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker-compose/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker-compose/">
+          
+          
+            
+          
+          Docker Compose一、安装Docker Compose123456# Compose目前已经完全支持Linux、Mac OS和Windows，在我们安装Compose之前，需要先安装Docker。下面我 们以编译好的二进制包方式安装在Linux系统中。 curl -L https://github.com/docker/compose/releases/download/1.22.0/d
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 21:50" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/"></a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">
+          
+          
+            
+          
+          Docker 私有仓库一、私有仓库搭建12345678910111213# 1、拉取私有仓库镜像 docker pull registry# 2、启动私有仓库容器 docker run -id --name=registry -p 5000:5000 registry# 3、打开浏览器 输入地址http://私有仓库服务器ip:5000/v2/_catalog，看到&#123;&quot;repo
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 21:50" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BD%A2%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"></a>
       </h1>
 
@@ -363,217 +571,6 @@
           </div>
         
         
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"></a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">
-          
-          
-            
-          
-          jvm的类加载机制  JVM将class文件字节码文件加载到内存中， 并将这些静态数据转换成方法区中的运行时数据结构，在堆(并不一定在堆中，HotSpot在方法区中)中生成一个代表这个类的java.lang.Class 对象，作为方法区类数据的访问入口。
-####类加载的七个阶段
-
-四个概念：  1:class文件：编译之后生成的文件，存储在硬盘上
-  2:class content： 加载阶段，
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-21 21:31" pubdate>
-              2021-02-21
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java%20%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%20%20JMM/"></a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java%20%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%20%20JMM/">
-          
-          
-            
-          
-          ##java 内存模型  JMM
-###1: java内存模型的基本概念   
-​      当程序在运行过程中，会将运算需要的数据从主存复制一份到CPU的高速缓存当中，那么CPU进行计算时就可以直接从它的高速缓存读取数据和向其中写入数据，当运算结束之后，再将高速缓存中的数据刷新到主存当中。随着CPU性能的不断提高，一层缓存就慢慢的无法满足要求了，就逐渐的衍生出多级缓存。按照数据读取顺序和与CPU
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-21 21:31" pubdate>
-              2021-02-21
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2019/10/10/%E6%90%AD%E5%BB%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BD%BF%E7%94%A8Hexo%E8%BF%9B%E8%A1%8C%E6%90%AD%E5%BB%BA%EF%BC%89/">如何搭建博客</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/10/10/%E6%90%AD%E5%BB%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BD%BF%E7%94%A8Hexo%E8%BF%9B%E8%A1%8C%E6%90%AD%E5%BB%BA%EF%BC%89/">
-          
-          
-            
-          
-          搭建好看的静态博客（使用Hexo进行搭建）经常看到大牛的博客非常的高大帅气，虽然我很渣，但是逼格不能输，所以有了以下的搭建记录。
-我的成果smartdongwei,喜欢的可以参考下面的记录一起来动手搞起来。
-安装Git Bash访问git下载最新版本的git bash
-安装完成之后，右键打开git bash,设置用户名和邮件信息
-12git config --global user.name &q
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-10-10 11:00" pubdate>
-              2019-10-10
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%96%87%E6%A1%A3%E5%9F%BA%E7%A1%80/">文档基础</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2019/10/10/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/">linux服务器操作</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/10/10/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/">
-          
-          
-            
-          
-          ##linux服务器上相关操作
-####mysql服务器
-1:重启mysql服务端
-​        service mysql restart
-2: 登录MySQL
-​     mysql -u root  -p root
-spark的操作hive的相关操作
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-10-10 10:00" pubdate>
-              2019-10-10
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/linux/">linux</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2019/10/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%BB%E7%BB%93/">十大经典算法的总结</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/10/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%BB%E7%BB%93/">
-          
-          
-            
-          
-          十大经典排序算法的总结1： 冒泡排序   冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。
-###1.1 算法描述
-
-比较相邻的元素。如果第一个比第二个大，就交换它们两个；
-对每一对相邻元素作同
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-10-10 10:00" pubdate>
-              2019-10-10
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-            
-          </div>
         
       </div>
     </article>
