@@ -184,6 +184,100 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">docker应用部署</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">
+          
+          
+            
+          
+          Docker 应用部署一、部署MySQL
+搜索mysql镜像
+
+1docker search mysql
+
+拉取mysql镜像
+
+1docker pull mysql:5.6
+
+创建容器，设置端口映射、目录映射
+
+123# 在/root目录下创建mysql目录用于存储mysql数据信息mkdir ~/mysqlcd ~/mysql
+12345678docker run -id \-p 3307:3
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-03-10 12:00" pubdate>
+              2020-03-10
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/docker/">docker</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">docker私有仓库</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">
+          
+          
+            
+          
+          Docker 私有仓库一、私有仓库搭建12345678910111213# 1、拉取私有仓库镜像 docker pull registry# 2、启动私有仓库容器 docker run -id --name=registry -p 5000:5000 registry# 3、打开浏览器 输入地址http://私有仓库服务器ip:5000/v2/_catalog，看到&#123;&quot;repo
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-03-10 11:00" pubdate>
+              2020-03-10
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/docker/">docker</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%AE%89%E8%A3%85docker/">安装docker方法</a>
       </h1>
 

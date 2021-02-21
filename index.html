@@ -549,28 +549,18 @@ RUN
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">docker应用部署</a>
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E4%B8%8Espringboot%E7%9A%84%E4%BD%BF%E7%94%A8/">docker与springboot的使用</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E4%B8%8Espringboot%E7%9A%84%E4%BD%BF%E7%94%A8/">
           
           
             
           
-          Docker 应用部署一、部署MySQL
-搜索mysql镜像
-
-1docker search mysql
-
-拉取mysql镜像
-
-1docker pull mysql:5.6
-
-创建容器，设置端口映射、目录映射
-
-123# 在/root目录下创建mysql目录用于存储mysql数据信息mkdir ~/mysqlcd ~/mysql
-12345678docker run -id \-p 3307:3
+          docker与springboot的使用1: docker-maven-plugin配置自动打包docker镜像   使用的是docker-maven-plugin的打包插件，当对程序进行打包时，可以自动在远程的docker 服务器打包出相关镜像，具体的配置信息如下图所示:  （注意：需要使用1.0以上的版本）
+1.1  pom文件上相关参数添加   相关参数的解释：
+  (1) executio
         </a>
       </p>
 
@@ -590,6 +580,8 @@ RUN
             
               <a href="/tags/docker/">docker</a>
             
+              <a href="/tags/springboot/">springboot</a>
+            
           </div>
         
       </div>
@@ -602,16 +594,17 @@ RUN
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">docker私有仓库</a>
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">docker安装和使用</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%20%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/">
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">
           
           
             
           
-          Docker 私有仓库一、私有仓库搭建12345678910111213# 1、拉取私有仓库镜像 docker pull registry# 2、启动私有仓库容器 docker run -id --name=registry -p 5000:5000 registry# 3、打开浏览器 输入地址http://私有仓库服务器ip:5000/v2/_catalog，看到&#123;&quot;repo
+          docker安装和使用1：离线包安装docker  下载好docker所需要的3个deb文件，containerd.io_1.4.3-1_arm64.deb   docker-ce_18.09.03-0debian-stretch_arm64.deb   docker-ce-cli_18.09.03-0debian-stretch_arm64.deb 
+  然后使用 以下命令来安装docker-c
         </a>
       </p>
 
@@ -619,7 +612,7 @@ RUN
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-03-10 11:00" pubdate>
+            <time datetime="2020-03-10 12:00" pubdate>
               2020-03-10
             </time>
           </div>
