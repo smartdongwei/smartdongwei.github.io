@@ -20,7 +20,7 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-  <title>smartwang的技术点滴</title>
+  <title>docker compose - smartwang的技术点滴</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="docker compose">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-21 21:31" pubdate>
-        2021年2月21日 晚上
+      <time datetime="2020-03-10 12:00" pubdate>
+        2020年3月10日 中午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      14 字
+      255 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -227,16 +227,52 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">docker compose</h1>
             
             <div class="markdown-body">
-              <p>##1: 深度优先搜索和广度优先搜索</p>
+              <h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><h3 id="一、安装Docker-Compose"><a href="#一、安装Docker-Compose" class="headerlink" title="一、安装Docker Compose"></a>一、安装Docker Compose</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> Compose目前已经完全支持Linux、Mac OS和Windows，在我们安装Compose之前，需要先安装Docker。下面我 们以编译好的二进制包方式安装在Linux系统中。</span> <br>curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose<br><span class="hljs-meta">#</span><span class="bash"> 设置文件可执行权限</span> <br>chmod +x /usr/local/bin/docker-compose<br><span class="hljs-meta">#</span><span class="bash"> 查看版本信息</span> <br>docker-compose -version<br></code></pre></td></tr></table></figure>
+<h3 id="二、卸载Docker-Compose"><a href="#二、卸载Docker-Compose" class="headerlink" title="二、卸载Docker Compose"></a>二、卸载Docker Compose</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 二进制包方式安装的，删除二进制文件即可</span><br>rm /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="三、-使用docker-compose编排nginx-springboot项目"><a href="#三、-使用docker-compose编排nginx-springboot项目" class="headerlink" title="三、 使用docker compose编排nginx+springboot项目"></a>三、 使用docker compose编排nginx+springboot项目</h3><ol>
+<li>创建docker-compose目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir ~/docker-compose<br>cd ~/docker-compose<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>编写 docker-compose.yml 文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">version: &#x27;3&#x27;<br>services:<br>  nginx:<br>   image: nginx<br>   ports:<br>    - 80:80<br>   links:<br>    - app<br>   volumes:<br>    - ./nginx/conf.d:/etc/nginx/conf.d<br>  app:<br>    image: app<br>    expose:<br>      - &quot;8080&quot;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建./nginx/conf.d目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir -p ./nginx/conf.d<br></code></pre></td></tr></table></figure>
+
+
+<ol start="4">
+<li>在./nginx/conf.d目录下 编写itheima.conf文件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">server &#123;<br>    listen 80;<br>    access_log off;<br><br>    location / &#123;<br>        proxy_pass http://app:8080;<br>    &#125;<br>   <br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>在~/docker-compose 目录下 使用docker-compose 启动容器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker-compose up<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>测试访问</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">http://192.168.149.135/hello<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/docker/">docker</a>
+                    
+                  </div>
                 
               </div>
               
@@ -251,12 +287,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/dockerfile/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">dockerfile相关命令</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/11/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/springboot%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81/">
-                        <span class="hidden-mobile">springboot函数的解析</span>
+                      <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/">
+                        <span class="hidden-mobile">docker应用部署</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

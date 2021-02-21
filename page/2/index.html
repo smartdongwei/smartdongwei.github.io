@@ -184,11 +184,52 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"></a>
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%AE%89%E8%A3%85docker/">安装docker方法</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">
+        <a href="/2020/03/10/docker%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/%E5%AE%89%E8%A3%85docker/">
+          
+          
+            
+          
+          一、课程方式安装Docker12345678910# 1、yum 包更新到最新 yum update# 2、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的 yum install -y yum-utils device-mapper-persistent-data lvm2# 3、 设置yum源yum-config-
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-03-10 10:00" pubdate>
+              2020-03-10
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/docker/">docker</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/02/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">java类加载机制</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/02/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">
           
           
             
@@ -205,12 +246,19 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-21 21:31" pubdate>
-              2021-02-21
+            <time datetime="2020-02-10 10:00" pubdate>
+              2020-02-10
             </time>
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java%E5%9F%BA%E7%A1%80/">java基础</a>
+            
+          </div>
         
       </div>
     </article>
@@ -222,18 +270,25 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java%20%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%20%20JMM/"></a>
+        <a href="/2020/02/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/MYSQL%E7%B4%A2%E5%BC%95%E6%9C%AC%E8%B4%A8%E7%9A%84%E8%A7%A3%E6%9E%90/">mysql索引本质的解析</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/java%20%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%20%20JMM/">
+        <a href="/2020/02/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/MYSQL%E7%B4%A2%E5%BC%95%E6%9C%AC%E8%B4%A8%E7%9A%84%E8%A7%A3%E6%9E%90/">
           
           
             
           
-          ##java 内存模型  JMM
-###1: java内存模型的基本概念   
-​      当程序在运行过程中，会将运算需要的数据从主存复制一份到CPU的高速缓存当中，那么CPU进行计算时就可以直接从它的高速缓存读取数据和向其中写入数据，当运算结束之后，再将高速缓存中的数据刷新到主存当中。随着CPU性能的不断提高，一层缓存就慢慢的无法满足要求了，就逐渐的衍生出多级缓存。按照数据读取顺序和与CPU
+          MYSQL索引本质的解析
+索引是排好序的数据结构，索引底层用的是B-Tree
+1：红黑树是什么？
+就是平衡二叉树，高度差不能超过1层，超过会自动平衡。
+缺点：数据量越大，数据的高度越大，查询的效率太低
+2 ：b-树和b+树
+一个节点上可以存储多个数据，mysql节点的存储大小是16k。
+非叶子节点不存储data，只存储索引，可以放更多的索引
+叶子节点包含所有的索引字段
+叶子节点用指针连接，提高区间
         </a>
       </p>
 
@@ -241,12 +296,19 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-21 21:31" pubdate>
-              2021-02-21
+            <time datetime="2020-02-10 10:00" pubdate>
+              2020-02-10
             </time>
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/mysql/">mysql</a>
+            
+          </div>
         
       </div>
     </article>
