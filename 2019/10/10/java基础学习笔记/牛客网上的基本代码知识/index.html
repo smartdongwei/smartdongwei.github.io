@@ -20,7 +20,7 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-  <title>smartwang的技术点滴</title>
+  <title>刷算法的相关代码 - smartwang的技术点滴</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="刷算法的相关代码">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-21 21:31" pubdate>
-        2021年2月21日 晚上
+      <time datetime="2019-10-10 10:00" pubdate>
+        2019年10月10日 上午
       </time>
     </span>
   
@@ -227,10 +227,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">刷算法的相关代码</h1>
             
             <div class="markdown-body">
-              <h1 id="牛客网上的基本代码知识"><a href="#牛客网上的基本代码知识" class="headerlink" title="牛客网上的基本代码知识"></a>牛客网上的基本代码知识</h1><p>###1：计算字符串最后一个单词的长度</p>
+              <h1 id="刷算法的相关代码"><a href="#刷算法的相关代码" class="headerlink" title="刷算法的相关代码"></a>刷算法的相关代码</h1><p>###1：计算字符串最后一个单词的长度</p>
 <p>主要是输入 System.in   给到了 InputStream</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.InputStream;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;<br>        <span class="hljs-keyword">int</span> times=<span class="hljs-number">0</span>;<br>        InputStream in=System.in;<br>        <span class="hljs-keyword">char</span> c=(<span class="hljs-keyword">char</span>) in.read();<br>        <span class="hljs-keyword">while</span>(c!=<span class="hljs-string">&#x27;\n&#x27;</span>)&#123;<br>            <span class="hljs-keyword">if</span>(c==<span class="hljs-string">&#x27; &#x27;</span>)&#123;<br>                times=<span class="hljs-number">0</span>;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                times+=<span class="hljs-number">1</span>;<br>            &#125;<br>            c=(<span class="hljs-keyword">char</span>) in.read();<br>        &#125;<br>        System.out.println(times);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -283,6 +283,13 @@
               <div class="post-metas mb-3">
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">
@@ -296,15 +303,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2019/10/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%BB%E7%BB%93/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">十大经典算法的总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BD%A2%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/">
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>

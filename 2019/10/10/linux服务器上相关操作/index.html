@@ -20,7 +20,7 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-  <title>smartwang的技术点滴</title>
+  <title>linux服务器操作 - smartwang的技术点滴</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="linux服务器操作">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-21 21:31" pubdate>
-        2021年2月21日 晚上
+      <time datetime="2019-10-10 10:00" pubdate>
+        2019年10月10日 上午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      333 字
+      41 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      1
        分钟
     </span>
   
@@ -227,23 +227,28 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">linux服务器操作</h1>
             
             <div class="markdown-body">
-              <h2 id="Spring框架中的设计模式-一"><a href="#Spring框架中的设计模式-一" class="headerlink" title="Spring框架中的设计模式(一)"></a>Spring框架中的设计模式(一)</h2><h4 id="1：代理模式"><a href="#1：代理模式" class="headerlink" title="1：代理模式"></a>1：代理模式</h4><p>#####1.1： 动态代理</p>
-<p>  动态代理技术是在内存中生成代理对象的一种技术，也是整个代理过程在内存中运行，不需要手写代理类的代码，也不会存在代理类的编译过程，而是直接在运行期，在JVM中凭空造出一个代理对象供我们使用，一般代理技术有以下两种：</p>
-<h6 id="1-1-1-基于JDK（接口）的动态代理"><a href="#1-1-1-基于JDK（接口）的动态代理" class="headerlink" title="1.1.1 基于JDK（接口）的动态代理"></a>1.1.1 基于JDK（接口）的动态代理</h6><p>  JDK自带的动态代理技术，需要使用一个静态方法来创建代理对象。他要求被代理的对象，也就是目标类，必须实现接口，生成的代理对象和原对象都实现相同的接口，是兄弟关系。</p>
-<p>######2.1.1 基于CGLIB（父类）的动态代理</p>
-<p>  第三方CGLIB的动态代理技术，也是可以使用一个静态方法来创建代理对象。它不要求目标类实现接口，但是要求目标类不是最终类，也就是不能被final修饰。因为CGLIB是基于目标类生成改类的一个子类作为代理类，所以目标类必须可以被继承。</p>
-<p>Enhancer.create(Class type,Callback callback)</p>
-<p>​    Callback callback : 主要使用它的一个子接口 MethodInterceptor</p>
-<p><img src="C:\Users\wang\AppData\Roaming\Typora\typora-user-images\image-20200802223530903.png" srcset="/img/loading.gif" alt="image-20200802223530903"></p>
-
+              <p>##linux服务器上相关操作</p>
+<p>####mysql服务器</p>
+<p>1:重启mysql服务端</p>
+<p>​        service mysql restart</p>
+<p>2: 登录MySQL</p>
+<p>​     mysql -u root  -p root</p>
+<h4 id="spark的操作"><a href="#spark的操作" class="headerlink" title="spark的操作"></a>spark的操作</h4><h4 id="hive的相关操作"><a href="#hive的相关操作" class="headerlink" title="hive的相关操作"></a>hive的相关操作</h4>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                  </div>
                 
               </div>
               
@@ -258,9 +263,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BD%A2%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/">
+                      <a href="/2019/10/10/%E6%90%AD%E5%BB%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BD%BF%E7%94%A8Hexo%E8%BF%9B%E8%A1%8C%E6%90%AD%E5%BB%BA%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">如何搭建博客</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -268,8 +273,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/21/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/springboot%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81/">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2019/10/10/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile">十大经典算法的总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
